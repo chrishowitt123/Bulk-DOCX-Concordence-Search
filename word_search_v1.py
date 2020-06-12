@@ -1,9 +1,9 @@
 import nltk
 from nltk.tokenize import word_tokenize
+nltk.download('gutenberg')
 from nltk import Text
 import glob 
 from docx import *
-nltk.download('gutenberg')
 import docx2txt
 import pandas as pd
 import glob
