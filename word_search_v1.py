@@ -1,10 +1,11 @@
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk import Text
-nltk.download('gutenberg')
 import glob 
 from docx import *
+nltk.download('gutenberg')
 import docx2txt
+import pandas as pd
 import glob
 import zipfile
 
@@ -16,12 +17,12 @@ while True:
     while True:
 
         try:
-            search = input('\nEnter search word or type "cd" to change folder location: ')
+            search = input('\nEnter search word or type"cd" to change folder location: ')
             if search == 'cd':
                 break
             
             else:
-                print('\nSearching docs for: ' + search + '\n')
+                print('\nSearching docs for: ' + search)
 
             text = ''
             for file in glob.glob(PATH):
@@ -34,7 +35,6 @@ while True:
         
         except zipfile.BadZipFile as err:
             print('\nYou need to close the file you are searching and try again')
-
 
             
 
