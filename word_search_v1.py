@@ -1,11 +1,10 @@
 import nltk
 from nltk.tokenize import word_tokenize
-nltk.download('gutenberg')
 from nltk import Text
+nltk.download('gutenberg')
 import glob 
 from docx import *
 import docx2txt
-import pandas as pd
 import glob
 import zipfile
 
