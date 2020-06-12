@@ -17,7 +17,7 @@ while True:
     while True:
 
         try:
-            search = input('\nEnter search word or type"cd" to change folder location: ')
+            search = input('\nEnter search word or type "cd" to change folder location: ')
             if search == 'cd':
                 break
             
