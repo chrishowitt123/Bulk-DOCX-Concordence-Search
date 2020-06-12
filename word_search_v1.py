@@ -21,7 +21,7 @@ while True:
                 break
             
             else:
-                print('\nSearching docs for: ' + search)
+                print('\nSearching docs for: ' + search + '...\n')
 
             text = ''
             for file in glob.glob(PATH):
