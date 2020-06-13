@@ -5,7 +5,6 @@ import glob
 from docx import *
 nltk.download('gutenberg')
 import docx2txt
-import pandas as pd
 import glob
 import zipfile
 
@@ -17,7 +16,7 @@ while True:
     while True:
 
         try:
-            search = input('\nEnter search word or type"cd" to change folder location: ')
+            search = input('\nEnter search word or type "cd" to change folder location: ')
             if search == 'cd':
                 break
             
