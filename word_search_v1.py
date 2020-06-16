@@ -1,17 +1,15 @@
 import nltk
 from nltk.tokenize import word_tokenize
-from nltk import Text
-import glob 
+from nltk import Text 
 from docx import *
 nltk.download('gutenberg')
 import docx2txt
-import glob
 import zipfile
+import os
 
 while True:
     
-    PATH = input('\nPaste the location of the files you wish to search: ')
-    PATH = PATH + '\*.docx'
+    filepath = input('\nPaste the location of the project folder you wish to search: ')
 
     while True:
 
@@ -24,8 +22,13 @@ while True:
                 print('\nSearching docs for: ' + search)
 
             text = ''
-            for file in glob.glob(PATH):
-                text += docx2txt.process(file)
+
+            for folder_path, folder_names, file_names in os.walk(filepath):
+                for i in file_names:
+                    if not i.endswith(".docx"):
+                         continue
+                    path = os.path.join(folder_path, i)
+                    text += docx2txt.process(path)
 
 
             tokens = word_tokenize(text)    
@@ -34,6 +37,3 @@ while True:
         
         except zipfile.BadZipFile as err:
             print('\nYou need to close the file you are searching and try again')
-
-            
-
